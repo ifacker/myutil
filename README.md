@@ -18,3 +18,11 @@
 	}
 	fmt.Println(string(bodyByte))
 ```
+
+### Unicode2String  
+把 unicode 转为 string
+```go
+	unicode := `\u60a8\u4f3c\u4e4e\u5df2\u7ecf\u7b7e\u5230\u8fc7\u4e86..`
+	str, err := Unicode2String(unicode)
+	fmt.Println(str, err)
+```
