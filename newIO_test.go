@@ -13,6 +13,6 @@ func TestNewReadAll(t *testing.T) {
 		fmt.Println(err)
 	}
 	buf := bufio.NewReader(file)
-	result := NewReadAll(buf)
-	fmt.Println(string(result))
+	result, err := NewReadAll(buf)
+	fmt.Println(string(result), err)
 }

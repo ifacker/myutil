@@ -35,6 +35,6 @@
 		fmt.Println(err)
 	}
 	buf := bufio.NewReader(file)
-	result := NewReadAll(buf)
+	result, _ := NewReadAll(buf)
 	fmt.Println(string(result))
 ```
