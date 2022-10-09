@@ -18,6 +18,9 @@ func AutoReaderBody2Byte(resp *http.Response) ([]byte, error) {
 	} else {
 		reader = resp.Body
 	}
-	body := NewReadAll(reader)
+	body, err := NewReadAll(reader)
+	if err != nil {
+		return body, err
+	}
 	return body, nil
 }
