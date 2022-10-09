@@ -2,7 +2,6 @@ package myutil
 
 import (
 	"bufio"
-	"fmt"
 	"io"
 )
 
@@ -17,7 +16,7 @@ func NewReadAll(reader io.Reader) ([]byte, error) {
 		//fmt.Println(i)
 		n, err := bufReader.Read(buf[:])
 		if err == io.EOF {
-			fmt.Println("read the file finished")
+			//fmt.Println("read the file finished")
 			break
 		}
 		if err != nil {
