@@ -3,7 +3,6 @@ package myutil
 import (
 	"compress/gzip"
 	"io"
-	"io/ioutil"
 	"net/http"
 )
 
@@ -19,9 +18,6 @@ func AutoReaderBody2Byte(resp *http.Response) ([]byte, error) {
 	} else {
 		reader = resp.Body
 	}
-	body, err := ioutil.ReadAll(reader)
-	if err != nil {
-		return nil, err
-	}
+	body := NewReadAll(reader)
 	return body, nil
 }
