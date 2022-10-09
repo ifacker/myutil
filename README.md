@@ -26,3 +26,15 @@
 	str, err := Unicode2String(unicode)
 	fmt.Println(str, err)
 ```
+
+### NewReadAll
+读取 io.reader 流，并返回 []byte 类型数据
+```go
+	file, err := os.Open("test.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
+	buf := bufio.NewReader(file)
+	result := NewReadAll(buf)
+	fmt.Println(string(result))
+```
