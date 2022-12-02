@@ -38,3 +38,39 @@
 	result, _ := NewReadAll(buf)
 	fmt.Println(string(result))
 ```
+
+### InitProxy
+设置代理，同时支持并自动识别 socks5 协议和 http 协议  
+传入代理的格式是：  
+socks5://localhost:8080  
+http://localhost:8080  
+```go
+	proxyUrl := "socks5://localhost:1080"
+	//proxyUrl := "http://localhost:1080"
+	tr := &http.Transport{
+		MaxIdleConns:        500,
+		MaxIdleConnsPerHost: 500,
+		MaxConnsPerHost:     500,
+		TLSClientConfig: &tls.Config{
+			InsecureSkipVerify: true,
+		},
+	}
+	// 为 tr 添加代理
+	err := InitProxy(tr, proxyUrl)
+	if err != nil {
+		fmt.Println(err)
+	}
+	clinet := http.Client{
+		Transport: tr,
+	}
+	req, err := http.NewRequest("GET", "https://baidu.com", nil)
+	if err != nil {
+		log.Println(err)
+	}
+	resp, err := clinet.Do(req)
+	if err != nil {
+		log.Println(err)
+	}
+	result, _ := ioutil.ReadAll(resp.Body)
+	fmt.Println(string(result))
+```
