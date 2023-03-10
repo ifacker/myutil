@@ -1,4 +1,4 @@
-package internet
+package myutil
 
 import (
 	"context"

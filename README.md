@@ -27,6 +27,22 @@
 	fmt.Println(str, err)
 ```
 
+### StringToBytes
+把 string 转为 byte[]
+```go
+	a := "abc"
+	b := StringToBytes(a)
+	fmt.Println(b)
+```
+
+### BytesToString
+把 []byte 转为 string
+```go
+	a := []byte{'a', 'b', 'c'}
+	b := BytesToString(a)
+	fmt.Println(b)
+```
+
 ### NewReadAll
 读取 io.reader 流，并返回 []byte 类型数据
 ```go
@@ -74,3 +90,4 @@ http://localhost:8080
 	result, _ := ioutil.ReadAll(resp.Body)
 	fmt.Println(string(result))
 ```
+

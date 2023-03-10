@@ -1,4 +1,4 @@
-package code
+package myutil
 
 import (
 	"fmt"
@@ -10,4 +10,16 @@ func TestUnicode2String(t *testing.T) {
 	unicode := `\u60a8\u4f3c\u4e4e\u5df2\u7ecf\u7b7e\u5230\u8fc7\u4e86..`
 	str, err := Unicode2String(unicode)
 	fmt.Println(str, err)
+}
+
+func TestStringToBytes(t *testing.T) {
+	a := "abc"
+	b := StringToBytes(a)
+	fmt.Println(b)
+}
+
+func TestBytesToString(t *testing.T) {
+	a := []byte{'a', 'b', 'c'}
+	b := BytesToString(a)
+	fmt.Println(b)
 }

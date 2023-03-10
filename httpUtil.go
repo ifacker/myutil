@@ -1,8 +1,7 @@
-package internet
+package myutil
 
 import (
 	"compress/gzip"
-	io2 "github.com/ifacker/myutil/io"
 	"io"
 	"net/http"
 )
@@ -19,7 +18,7 @@ func AutoReaderBody2Byte(resp *http.Response) ([]byte, error) {
 	} else {
 		reader = resp.Body
 	}
-	body, err := io2.NewReadAll(reader)
+	body, err := NewReadAll(reader)
 	if err != nil {
 		return body, err
 	}
