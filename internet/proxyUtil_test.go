@@ -1,4 +1,4 @@
-package myutil
+package internet
 
 import (
 	"crypto/tls"

@@ -1,4 +1,4 @@
-package myutil
+package code
 
 import (
 	"fmt"

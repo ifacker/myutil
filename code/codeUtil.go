@@ -1,10 +1,11 @@
-package myutil
+package code
 
 import (
 	"bytes"
 	"encoding/binary"
 	"encoding/hex"
 	"strings"
+	"unsafe"
 )
 
 // unicode 转 string
@@ -49,4 +50,14 @@ func Unicode2String(form string) (result string, err error) {
 
 	}
 	return
+}
+
+// string 转 byte
+func StringToBytes(s string) []byte {
+	return unsafe.Slice(unsafe.StringData(s), len(s))
+}
+
+// byte 转 string
+func BytesToString(b []byte) string {
+	return unsafe.String(&b[0], len(b))
 }
