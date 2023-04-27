@@ -92,6 +92,9 @@ http://localhost:8080
 ```
 
 ---
+### v1.1.3
+修复了 AutoReaderBody2Byte 方法的 bug
+
 ### v1.1.2
 新更新的版本处理了各个方法的空指针异常返回报错
 
