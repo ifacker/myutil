@@ -12,6 +12,12 @@ import (
 
 // 初始化 proxy 配置，应传入 Transport 和 proxyURL【proxyURL 的格式为：socks5://localhost:8080 或 http://localhost:8080】
 func InitProxy(tr *http.Transport, proxyURL string) error {
+
+	proxyURL = strings.TrimSpace(proxyURL)
+	if tr == nil || proxyURL == "" {
+		return errors.New("tr 空指针异常 或 proxyURL 参数为空")
+	}
+
 	// 全部转小写，方便判断
 	proxy := strings.ToLower(proxyURL)
 	if strings.Contains(proxy, "socks5") {

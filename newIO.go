@@ -2,12 +2,16 @@ package myutil
 
 import (
 	"bufio"
+	"errors"
 	"io"
 )
 
 // 新的 readAll，用于替换以前的 ioutil.ReadAll() 函数，解决 ioutil.ReadAll() 函数在遇到超大 reader 流时的效率低下以及报错问题
-func NewReadAll(reader io.Reader) ([]byte, error) {
-	bufReader := bufio.NewReader(reader)
+func NewReadAll(reader *io.Reader) ([]byte, error) {
+	if reader == nil {
+		return nil, errors.New("reader 空指针异常")
+	}
+	bufReader := bufio.NewReader(*reader)
 	var result []byte
 	var buf [1024]byte
 	var i = 0

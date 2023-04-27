@@ -91,3 +91,8 @@ http://localhost:8080
 	fmt.Println(string(result))
 ```
 
+---
+### v1.1.2
+新更新的版本处理了各个方法的空指针异常返回报错
+
+...

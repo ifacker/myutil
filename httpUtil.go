@@ -2,12 +2,16 @@ package myutil
 
 import (
 	"compress/gzip"
+	"errors"
 	"io"
 	"net/http"
 )
 
 // 把 http 请求返回的 resp 的 body 读取转换成 byte 类型，如果出现乱码，可能是存在未解压的问题，该方法将自动帮你解压，避免出现乱码问题
 func AutoReaderBody2Byte(resp *http.Response) ([]byte, error) {
+	if resp == nil {
+		return nil, errors.New("resp 空指针异常")
+	}
 	var reader io.ReadCloser
 	if resp.Header.Get("Content-Encoding") == "gzip" {
 		var err error
