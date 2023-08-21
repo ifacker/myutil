@@ -19,3 +19,8 @@ func (s Set) AddAll(items []string) {
 func (s Set) Contains(item string) bool {
 	return s[item]
 }
+
+// 删除元素
+func (s Set) Remove(item string)  {
+	delete(s, item)
+}

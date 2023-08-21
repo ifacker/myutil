@@ -27,4 +27,7 @@ func TestSet(t *testing.T) {
 	fmt.Println(stringSet.Contains("apple"))
 	fmt.Println(stringSet.Contains("applePen"))
 
+	// Remove
+	stringSet.Remove("banana")
+
 }

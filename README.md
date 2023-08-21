@@ -24,6 +24,9 @@ Set，与 java 中的 Set 类似，特点是在添加数组的时候，不允许
 	// Contains
 	fmt.Println(stringSet.Contains("apple"))
 	fmt.Println(stringSet.Contains("applePen"))
+
+	// Remove
+	stringSet.Remove("banana")
 ```
 
 ### AutoReaderBody2Byte
