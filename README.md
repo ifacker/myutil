@@ -1,5 +1,17 @@
 ## 小工具类
 
+### Set
+Set，与 java 中的 Set 类似，特点是在添加数组的时候，不允许出现重复的 string 元素
+```go
+	mySet := make(Set)
+	mySet.Add("apple")
+	mySet.Add("banana")
+	mySet.Add("apple") // 这个不会重复添加
+
+	fmt.Println(mySet.Contains("apple"))  // 输出 true
+	fmt.Println(mySet.Contains("orange")) // 输出 false
+```
+
 ### AutoReaderBody2Byte
 把 http 请求返回的 resp 的 body 读取转换成 byte 类型，如果出现乱码，可能是存在未解压的问题，该方法将自动帮你解压，避免出现乱码问题
 ```go
