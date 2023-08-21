@@ -3,6 +3,7 @@
 ### Set
 Set，与 java 中的 Set 类似，特点是在添加数组的时候，不允许出现重复的 string 元素
 ```go
+	// add
 	mySet := make(Set)
 	mySet.Add("apple")
 	mySet.Add("banana")
@@ -10,6 +11,19 @@ Set，与 java 中的 Set 类似，特点是在添加数组的时候，不允许
 
 	fmt.Println(mySet.Contains("apple"))  // 输出 true
 	fmt.Println(mySet.Contains("orange")) // 输出 false
+
+	// addAll
+	stringSet := make(Set)
+	stringSet.AddAll([]string{"apple", "banana", "apple", "orange"})
+
+	fmt.Println("Set contains 'apple':", stringSet.Contains("apple"))   // 输出 "Set contains 'apple': true"
+	fmt.Println("Set contains 'orange':", stringSet.Contains("orange")) // 输出 "Set contains 'orange': true"
+	fmt.Println("Set contains 'grape':", stringSet.Contains("grape"))   // 输出 "Set contains 'grape': false"
+
+
+	// Contains
+	fmt.Println(stringSet.Contains("apple"))
+	fmt.Println(stringSet.Contains("applePen"))
 ```
 
 ### AutoReaderBody2Byte
