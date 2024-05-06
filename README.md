@@ -1,5 +1,34 @@
 ## 小工具类
 
+### RemoveDuplicateElement  
+数组去重  
+```go
+	as := []string{
+		"abc",
+		"def",
+		"ghi",
+		"abc",
+	}
+
+	fmt.Println(as)
+
+	bs := RemoveDuplicateElement(as)
+	fmt.Println(bs)
+```
+
+### RemoveDuplicateElementInt
+数组去重 int 版
+```go  
+	as := []int{
+		1, 2, 3, 4, 5, 1,
+	}
+
+	fmt.Println(as)
+
+	bs := RemoveDuplicateElementInt(as)
+	fmt.Println(bs)
+```
+
 ### Set
 Set，与 java 中的 Set 类似，特点是在添加数组的时候，不允许出现重复的 string 元素
 ```go
