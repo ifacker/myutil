@@ -21,6 +21,6 @@ func (s Set) Contains(item string) bool {
 }
 
 // 删除元素
-func (s Set) Remove(item string)  {
+func (s Set) Remove(item string) {
 	delete(s, item)
 }
